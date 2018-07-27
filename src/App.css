@@ -1,0 +1,296 @@
+.App {
+/*  padding-top: 36px;*/
+  text-align: center;
+  justify-content: center;
+}
+
+/******************** CUSTOM STYLES ******************/
+
+.full-screen{
+    width: 100%;
+    height: 100%;
+}
+
+
+.SearchMail-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.ListMail-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.errors {
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #EE0000;
+    margin-top: 0.25rem;
+    -webkit-animation: slide-down 0.3s backwards ease-in-out;
+    animation: slide-down 0.3s backwards ease-in-out;
+}
+
+/******************* INI SECTION LOGIN ***********************/
+.icon-password:before {
+    content: "\e900";
+    color: #8a8e8e;
+    opacity: .8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80)
+}
+.icon-user-login:before {
+    content: "\e901";
+    color: #8a8e8e;
+    opacity: .8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80)
+}
+section.login {
+    background: #fff;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 750px;
+    text-align: center;
+}
+section.login .subtitle {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333
+}
+section.login .content-header {
+    text-align: center;
+    width: 100%;
+}
+section.login .content-header img {
+    width: 220px
+}
+section.login .c-form-login {
+    margin-top: 20px;
+}
+section.login .c-form-login h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px
+}
+section.login .c-form-login p {
+    margin-bottom: 20px
+}
+section.login .c-form-login a.pass {
+    color: #8a8e8e;
+    display: block;
+    text-align: right;text-align: right;
+    text-decoration: underline;
+    cursor: pointer;
+}
+section.login .c-form-login label.error {
+    color: #f00;
+    display: block;
+    font-size: 14px;
+    text-align: left
+}
+section.login .c-form-login .documento {
+    position: relative;
+}
+section.login .c-form-login .documento .icon-user-login {
+    left: 20px;
+    top: 9px;
+    font-size: 32px;
+    position: absolute
+}
+section.login .c-form-login .contrasena {
+    position: relative;
+}
+section.login .c-form-login .contrasena .icon-password {
+    left: 20px;
+    top: 9px;
+    font-size: 32px;
+    position: absolute
+}
+section.login .c-form-login label {
+    display: block
+}
+section.login .c-form-login input {
+    background: none;
+    border: 1px solid #8a8e8e;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #8a8e8e;
+    font-size: 16px;
+    padding: 15px;
+    text-align: left;
+    width: 100%
+}
+section.login .c-form-login .input-top, section.login .c-form-login .input-bot {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding-left: 60px
+}
+section.login .c-form-login .input-top-forgotpass {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding-left: 20px
+}
+section.login .c-form-login input:focus {
+    outline: none
+}
+section.login .c-form-login input::placeholder {
+    color: #8a8e8e;
+    padding-left: 0;
+    opacity: .8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80)
+}
+section.login .c-form-login .btn-content {
+    margin-top: 10px;
+}
+section.login .c-form-login .btn-content input {
+    background: #8a8e8e;
+    border: 1px solid #fff;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    color: #fff !important;
+    display: blockd;
+    height: 54px;
+    padding: 10px;
+    text-align: center
+}
+section.login .c-form-login div {
+    margin: 1em 0;
+    margin-bottom: 20px;
+}
+section.login {
+    background: #fff;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: center;
+}
+section.login .subtitle {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333
+}
+section.login .content-header {
+    text-align: center;
+    width: 100%;
+}
+section.login .content-header img {
+    width: 220px
+}
+section.login .c-form-login {
+    margin-top: 20px;
+}
+section.login .c-form-login h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px
+}
+section.login .c-form-login p {
+    margin-bottom: 20px
+}
+section.login .c-form-login a.pass {
+    color: #8a8e8e;
+    display: block;
+    text-align: right;
+    text-decoration: underline;
+    cursor: pointer;
+}
+section.login .c-form-login label.error {
+    color: #f00;
+    display: block;
+    font-size: 14px;
+    text-align: left
+}
+section.login .c-form-login .documento {
+    position: relative;
+}
+section.login .c-form-login .documento .icon-user-login {
+    left: 20px;
+    top: 9px;
+    font-size: 32px;
+    position: absolute
+}
+section.login .c-form-login .contrasena {
+    position: relative;
+}
+section.login .c-form-login .contrasena .icon-password {
+    left: 20px;
+    top: 9px;
+    font-size: 32px;
+    position: absolute
+}
+section.login .c-form-login label {
+    display: block
+}
+section.login .c-form-login input {
+    background: none;
+    border: 1px solid #8a8e8e;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #8a8e8e;
+    font-size: 16px;
+    padding: 15px;
+    text-align: left;
+    width: 100%
+}
+section.login .c-form-login .input-top, section.login .c-form-login .input-bot {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding-left: 60px
+}
+section.login .c-form-login .input-top-forgotpass {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding-left: 20px
+}
+section.login .c-form-login input:focus {
+    outline: none
+}
+section.login .c-form-login input::placeholder {
+    color: #8a8e8e;
+    padding-left: 0;
+    opacity: .8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80)
+}
+section.login .c-form-login .btn-content {
+    margin-top: 10px;
+}
+section.login .c-form-login .btn-content input {
+    background: #8a8e8e;
+    border: 1px solid #fff;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    color: #fff;
+    display: blockd;
+    height: 54px;
+    padding: 10px;
+    text-align: center;
+}
+@media only screen and (min-width:768px) {
+    section.login {
+       /*margin-top: 100px*/
+        margin-top: 30px
+   }
+}
+
+.inputForgotPass {
+    padding: 20px !important;
+}
+
+.feedbackForgotPass {
+    top: 0px !important;
+}
+/******************* FIN SECTION LOGIN ***********************/
