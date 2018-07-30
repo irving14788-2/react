@@ -3,7 +3,7 @@ import Routes from './Routes';
 import { Auth } from 'aws-amplify';
 
 import './App.css';
-import 'bulma/css/bulma.css'
+import './style/css/bulma.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {

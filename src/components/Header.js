@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import imgLogo from '../images/logo-blanco.png';
-import '../style/css/Content.css';
 //import PropTypes from 'prop-types';
 
 export class Header extends Component{
@@ -16,8 +15,8 @@ export class Header extends Component{
 
   render(){
     return (
-      <section className="banner is-primary" >
-      <div className="banner-head">
+      <section className="hero is-primary" >
+      <div className="hero-head">
         <nav className="navbar">
           <div className="container">
             <div className="navbar-brand">
@@ -46,7 +45,7 @@ export class Header extends Component{
         </nav>
       </div>
 
-      <div className="banner-body">
+      <div className="hero-body">
         <div className="container has-text-centered">
           <h1 className="title">
             Buscar Evidencia de Correos

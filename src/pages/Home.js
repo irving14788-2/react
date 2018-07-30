@@ -42,6 +42,7 @@ export class Home extends Component {
     return (
       <div className="full-screen">
         <Header />
+        <br />
         <div className="SearchMail-wrapper">
           <SearchMail onResults={this._handleResults}/>
         </div>

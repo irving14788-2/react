@@ -85,16 +85,12 @@ export class SearchMail extends Component{
     console.log('_handleSubmit');
     e.preventDefault();
     this.obtenerCorreos(1);
+    this.obtenerCorreos(0);
   }
 
   handlePageChange = (pageNumber) => {
    console.log('handlePageChange active page is', {pageNumber});
    this.obtenerCorreos(pageNumber);
-  }
-
-  _getMailToExport = () => {
-    console.log('_getMailToExport ');
-    this.obtenerCorreos(0);
   }
 
   obtenerCorreos(pageNumber){
@@ -274,30 +270,31 @@ export class SearchMail extends Component{
             </div>
           </div>
 
-          <div className="field is-horizontal">
-            <div className="field-label">
-              <div className="control">
-                <button type="submit" className="button is-primary">Buscar</button>
+          <div>
+            <div className="field is-horizontal">
+              <div className="field-label">
+                <div className="control">
+                  <button type="submit" className="button is-primary">Buscar</button>
+                </div>
               </div>
-            </div>
-            <div className="field-body">
-              <div className="control">
-                <button type="button" onClick={this._cleanSearch} className="button is-primary">Limpiar</button>
+              <div className="field-body">
+                <div className="control">
+                  <button type="button" onClick={this._cleanSearch} className="button is-primary is-inverted">Limpiar</button>
+                </div>
               </div>
             </div>
           </div>
-
       </form>
 
       {
         this.state.search.length > 0
         ?
         <div>
+
           <CSVLink filename="correos.csv" data={this.state.searchExport}>
-            <button type="button" onClick={this._getMailToExport} className="button is-primary"> CSV ⬇</button>
+            <button type="button" className="button is-primary"> CSV ⬇</button>
           </CSVLink>
-
-
+          
           <Pagination size="sm" aria-label="Page navigation example"
             activePage={this.state.activePage}
             itemsCountPerPage={CONSTANTES.TAMANIO_PAGINACION}
