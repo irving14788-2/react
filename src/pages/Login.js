@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+//import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import LoaderButton from '../components/LoaderButton';
 import { Auth } from 'aws-amplify';
 import imgLogin from '../images/logo.png';
-import '../style/css/Login.css';
+//import '../style/css/Login.css';
 import { LOGIN_VALIDATION_MESSAGE,LOGIN_TITLE_MESSAGE } from '../commons/config/Util.js';
 
 export default class Login extends Component {
@@ -29,7 +29,6 @@ export default class Login extends Component {
 
 	handleSubmit = async event => {
 		event.preventDefault();
-
 		this.setState({ isLoading: true });
 
 		try {
@@ -44,45 +43,52 @@ export default class Login extends Component {
 
 	render() {
 		return (
-			<div id="wrapper">
-					<section className="login">
-						<div className="content-header">
-									<img src={imgLogin} alt="logo" />
-									<span className="subtitle">{LOGIN_TITLE_MESSAGE.SUBTITLE}</span>
-						</div>
-						<div className="c-form-login">
-						<h2>{LOGIN_TITLE_MESSAGE.TITLE}</h2>
-							<form onSubmit={this.handleSubmit}>
 
-								<FormGroup controlId="email" bsSize="large">
-									<ControlLabel>Email</ControlLabel>
-									<FormControl autoFocus type="text"
-									value={this.state.email}
-									onChange={this.handleChange}
-									/>
-								</FormGroup>
-								<FormGroup controlId="password" bsSize="large">
-									<ControlLabel>Password</ControlLabel>
-									<FormControl value={this.state.password} onChange={this.handleChange} type="password" />
-								</FormGroup>
 
-								<div className="btn-content">
-										<div className="btn-continuar">
-											<LoaderButton
-												block
-												bsSize="large"
-												disabled={!this.validateForm()}
-												type="submit"
-												isLoading={this.state.isLoading}
-												text="Login"
-												loadingText="Logging in…"/>
-										</div>
-									</div>
+			<section className="hero is-light is-fullheight">
+        <div className="hero-body">
+            <div className="container has-text-centered">
+                <div className="column is-4 is-offset-4">
+                    <h3 className="title has-text-grey">Login</h3>
+                    <p className="subtitle has-text-grey">{LOGIN_TITLE_MESSAGE.SUBTITLE}</p>
+                    <div className="box">
+                        <figure className="avatar">
+                            <img src={imgLogin} alt="logo" />
+                        </figure>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="field">
+                                <div className="control">
+                                    <input className="input is-large" type="text" id="email"
+																		placeholder="tu usuario" autoFocus=""
+																		onChange={this.handleChange} />
+                                </div>
+                            </div>
 
-							</form>
-						</div>
-					</section>
-			</div>
+                            <div className="field">
+                                <div className="control">
+                                    <input className="input is-large" id="password"
+																		onChange={this.handleChange}
+																		type="password"
+																		placeholder="Tu Contraseña" />
+                                </div>
+                            </div>
+
+														<LoaderButton
+														  className="button is-block is-info is-large is-fullwidth"
+															block
+															bsSize="large"
+															disabled={!this.validateForm()}
+															type="submit"
+															isLoading={this.state.isLoading}
+															text="Login"
+															loadingText="Logging in…"/>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 		);

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ModalMail } from './Modal';
-
-//import Frame from 'react-frame-component';
+var HtmlToReactParser = require('html-to-react').Parser;
 
 export class MailDetail extends Component{
 
@@ -28,26 +27,53 @@ export class MailDetail extends Component{
 
   _renderResults(){
     const {objMail} = this.props;
-    return (
-      <div className="content">
-          <p>Detalle</p>
 
+    var datosGrupo = JSON.parse(objMail.datosgrupo).map((grupo) =>{
+      return(
+        <div key={grupo.campo}>
+          <p>{grupo.descripcion} : {grupo.valor}</p>
+
+        </div>
+      )
+    })
+
+    var htmlInput = objMail.cuerpohtml;
+    var htmlToReactParser = new HtmlToReactParser();
+    var reactElement = htmlToReactParser.parse(htmlInput);
+    var adjuntos = JSON.parse(objMail.adjunto).map((adj)=>{
+        return (
+          <div key={adj.filename}>
+            <a href={adj.href} target="_blank">{adj.filename}</a>
+            <br />
+          </div>
+        )
+    })
+    console.log("adjuntos procesados = ",adjuntos);
+
+    return (
+      <div>
           <p>Detalle</p>
+          <div>
+            {reactElement}
+          </div>
+          <br />
           <table>
             <thead>
               <tr>
-                <th>Grupo</th>
+                <th>Campo</th>
                 <th>Descripcion</th>
               </tr>
             </thead>
             <tbody>
               <tr key="1">
-                <td>Código grupo</td>
-                <td>{objMail.codgrupo}</td>
+                <td>Adjuntos</td>
+                <td>
+                    {adjuntos}
+                </td>
               </tr>
               <tr key="2">
                 <td>Grupo</td>
-                <td>{JSON.stringify(objMail.datosgrupo)}</td>
+                <td>{datosGrupo}</td>
               </tr>
               <tr key="3">
                 <td>Asunto</td>
@@ -100,7 +126,7 @@ export class MailDetail extends Component{
     return (
       <div>
         <div>
-        <button onClick={this._handleSubmit}>Detalle</button>
+        <button type="button" className="button is-primary" onClick={this._handleSubmit}>Detalle</button>
         </div>
         <ModalMail
             onClose={this.toggleModal}

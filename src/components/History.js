@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ModalMail } from './Modal'
-import { Panel, PanelGroup } from 'react-bootstrap';
-import '../style/css/bulma-accordion.min.css';
-import '../style/bulma-accordion.js';
+import {Accordion} from './Accordion'
 
 export class History extends Component{
 
@@ -29,18 +27,41 @@ export class History extends Component{
     :
     this.state.results.map((result) => {
       return (
-        <article className="accordion" key={result.idemailtrack}>
-          <div className="accordion-header">
-            <p>{result.estado + "--" +result.fechanotif}</p>
-            <button className="toggle" aria-label="toggle"></button>
-          </div>
-          <div className="accordion-body">
-            <div className="accordion-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-            </div>
-          </div>
-        </article>
 
+          <Accordion.Pane title={result.estado + " - " +result.fechanotif} key={result.idemailtrack} >
+            <div>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Campo</th>
+                  <th>Descripcion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Estado</td>
+                  <td>{result.estado}</td>
+                </tr>
+                <tr>
+                  <td>Fecha de notificación</td>
+                  <td>{result.fechanotif}</td>
+                </tr>
+                <tr>
+                  <td>Dominio del emisor</td>
+                  <td>{result.fromdomain}</td>
+                </tr>
+                <tr>
+                  <td>Abierto desde </td>
+                  <td>{result.sourceagent}</td>
+                </tr>
+                <tr>
+                  <td>Notificación </td>
+                  <td>{result.idnotif}</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </Accordion.Pane>
       )
     })
 
@@ -49,12 +70,13 @@ export class History extends Component{
   _handleSubmit = (e) => {
     e.preventDefault();
     const {idemail} = this.props;
+     console.log("idemail obtenido: ", idemail);
     fetch('https://fr7cftmyal.execute-api.us-east-1.amazonaws.com/Dev/obtdetallecorreo',{
            method: 'post',
            mode: 'cors',
            headers: {'Content-Type':'application/json'},
            body: JSON.stringify({
-            "idemail": "1" //{idemail}
+            "idemail": 1 //{idemail}
           })
           })
       .then((response) => {
@@ -81,21 +103,18 @@ export class History extends Component{
     return (
       <div>
         <div>
-        <button onClick={this._handleSubmit}>Historial</button>
+        <button type="button" className="button is-primary" onClick={this._handleSubmit}>Historial</button>
         </div>
         <ModalMail
             onClose={this.toggleModal}
             show={this.state.isOpen}
             title="Historial"
           >
-
-          <section className="accordions">
-
-          {
-              this._renderResults()
-          }
-
-          </section>
+            <Accordion customClass="accordionWrapper">
+            {
+                this._renderResults()
+            }
+            </Accordion>
           </ModalMail>
       </div>
     )

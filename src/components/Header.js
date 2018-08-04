@@ -13,7 +13,9 @@ export class Header extends Component{
   //  this.state = { results: [], isOpen: false};
   }*/
 
+
   render(){
+    var handleLogout = this.props.handleLogout;
     return (
       <section className="hero is-primary" >
       <div className="hero-head">
@@ -32,12 +34,12 @@ export class Header extends Component{
             <div id="navbarMenuHeroA" className="navbar-menu">
               <div className="navbar-end">
                 <span className="navbar-item">
-                  <a className="button is-primary is-inverted">
+                  <button className="button is-primary is-inverted" onClick={()=> handleLogout()}>
                     <span className="icon">
                       <i className="fab sign-out-alt"></i>
                     </span>
                     <span>Salir</span>
-                  </a>
+                  </button>
                 </span>
               </div>
             </div>

@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Amplify from "aws-amplify";
 import config from "./commons/config/AWSConfig";
 import { CONSTANTES } from './commons/config/Util.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 Amplify.configure({
 	Auth: {

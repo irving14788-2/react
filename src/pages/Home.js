@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Header } from '../components/Header';
 import { SearchMail } from '../components/SearchMail';
 import { MailList } from '../components/MailList';
 import { Link } from 'react-router-dom';
@@ -30,7 +29,7 @@ export class Home extends Component {
 			<div className="lander">
 				<h1>No Autorizado</h1>
         <Link
-         className='button is-info'
+         className="button is-primary"
          to='/login'>
             Login
         </Link>
@@ -41,7 +40,7 @@ export class Home extends Component {
   _renderAuth(){
     return (
       <div className="full-screen">
-        <Header />
+
         <br />
         <div className="SearchMail-wrapper">
           <SearchMail onResults={this._handleResults}/>

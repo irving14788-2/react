@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Routes from './Routes';
 import { Auth } from 'aws-amplify';
-
+import { Header } from './components/Header';
+import { Link } from 'react-router-dom'
 import './App.css';
 import './style/css/bulma.css'
-import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
 
@@ -37,9 +38,14 @@ class App extends Component {
 
   handleLogout = async event => {
 		await Auth.signOut();
-
 		this.userHasAuthenticated(false);
-		this.props.history.push('/login');
+	  //this.props.history.push('/login');
+    const childProps = {
+			isAuthenticated: this.state.isAuthenticated,
+			userHasAuthenticated: this.userHasAuthenticated
+		};
+
+    <Routes childProps={childProps} />
 	};
 
 
@@ -50,6 +56,10 @@ class App extends Component {
 		};
     return (
       <div className='App'>
+      {
+        this.state.isAuthenticated ? <Header  handleLogout = {this.handleLogout} /> : ""
+      }
+
         <Routes childProps={childProps} />
       </div>
     );

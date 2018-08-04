@@ -9,18 +9,19 @@ export class MailList extends Component{
   }
   render(){
     const { mails } = this.props;
+
     return (
         <div>
-            <table className="table">
+            <table className="table is-responsive">
             <thead>
               <tr>
-                <th>Cod. Grupo</th>
-                <th>Destinatario</th>
-                <th>Asunto</th>
-                <th>Creación</th>
-                <th>Estado Final</th>
-                <th></th>
-                <th></th>
+                <th scope="col">Cod. Grupo</th>
+                <th scope="col">Destinatario</th>
+                <th scope="col">Asunto</th>
+                <th scope="col">Creación</th>
+                <th scope="col">Estado Final</th>
+                <th scope="col">Detalle</th>
+                <th scope="col">Historial</th>
               </tr>
             </thead>
             <tbody>
