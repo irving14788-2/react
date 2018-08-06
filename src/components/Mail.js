@@ -13,7 +13,7 @@ export class Mail extends Component{
     const {objMail} = this.props;
     return (
       <tr>
-        <td>{objMail.codgrupo}</td>
+        <td>{objMail.grupo}</td>
         <td>{objMail.toaddress}</td>
         <td>{objMail.asunto}</td>
         <td>{objMail.fechacreacion}</td>

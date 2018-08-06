@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-//import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import LoaderButton from '../components/LoaderButton';
 import { Auth } from 'aws-amplify';
 import imgLogin from '../images/logo.png';
-//import '../style/css/Login.css';
 import { LOGIN_VALIDATION_MESSAGE,LOGIN_TITLE_MESSAGE } from '../commons/config/Util.js';
 
 export default class Login extends Component {

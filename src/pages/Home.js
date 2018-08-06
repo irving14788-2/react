@@ -20,7 +20,7 @@ export class Home extends Component {
   _renderResults(){
     return this.state.results.length === 0
     ? <p>Sin Resultados</p>
-    : <div><MailList mails={this.state.results}/></div>
+    : <div><br /><MailList mails={this.state.results}/></div>
 
   }
 

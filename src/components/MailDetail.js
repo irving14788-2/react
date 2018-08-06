@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ModalMail } from './Modal';
+import { Icon } from 'react-icons-kit'
+import {documentIcon} from 'react-icons-kit/ikons/documentIcon'
 var HtmlToReactParser = require('html-to-react').Parser;
 
 export class MailDetail extends Component{
@@ -126,7 +128,7 @@ export class MailDetail extends Component{
     return (
       <div>
         <div>
-        <button type="button" className="button is-primary" onClick={this._handleSubmit}>Detalle</button>
+        <Icon icon={documentIcon} size={32} onClick={this._handleSubmit}/>
         </div>
         <ModalMail
             onClose={this.toggleModal}

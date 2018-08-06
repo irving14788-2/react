@@ -2742,6 +2742,7 @@ a.box:active {
 }
 
 .content h4 {
+  color: #f9f7f7;
   font-size: 1.25em;
   margin-bottom: 0.8em;
 }

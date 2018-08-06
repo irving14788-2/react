@@ -20,7 +20,7 @@ export class Accordion extends Component {
             })}
             onClick={() => onTogglePanel(props.index)}
           >
-            <h4 className={classnames('accordion-text')}>{props.title}</h4>
+            <h4 className='accordion-text-title'>{props.title}</h4>
             <span
               className={classnames('accordion--icon', {
                 'accordion--icon_expanded': isExpanded

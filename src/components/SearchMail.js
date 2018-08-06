@@ -6,7 +6,7 @@ import {CSVLink} from 'react-csv';
 import $ from 'jquery';
 
 
-require("bootstrap-less/bootstrap/bootstrap.less");
+//require("bootstrap-less/bootstrap/bootstrap.less");
 
 export class SearchMail extends Component{
 
@@ -322,7 +322,7 @@ export class SearchMail extends Component{
                 </div>
             </div>
           </div>
-
+                <br />
                 <Pagination
                   pageRangeDisplayed={5}
                   activePage={this.state.activePage}

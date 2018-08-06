@@ -11,11 +11,11 @@ export class MailList extends Component{
     const { mails } = this.props;
 
     return (
-        <div>
-            <table className="table is-responsive">
+        <div className="table-wrapper">
+            <table className="table is-responsive is-bordered is-striped is-narrow is-hoverable is-fullwidth">
             <thead>
               <tr>
-                <th scope="col">Cod. Grupo</th>
+                <th scope="col">Grupo</th>
                 <th scope="col">Destinatario</th>
                 <th scope="col">Asunto</th>
                 <th scope="col">Creación</th>

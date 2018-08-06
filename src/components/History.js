@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ModalMail } from './Modal'
-import {Accordion} from './Accordion'
+import { ModalMail } from './Modal';
+import {Accordion} from './Accordion';
+import { Icon } from 'react-icons-kit'
+import {time} from 'react-icons-kit/ikons/time';
 
 export class History extends Component{
 
@@ -103,7 +105,7 @@ export class History extends Component{
     return (
       <div>
         <div>
-        <button type="button" className="button is-primary" onClick={this._handleSubmit}>Historial</button>
+        <Icon icon={time} size={32} onClick={this._handleSubmit}/>
         </div>
         <ModalMail
             onClose={this.toggleModal}
